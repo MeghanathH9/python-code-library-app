@@ -1,0 +1,39 @@
+---
+services:
+  db:
+    image: meghanath23/project:dbimage
+    deploy:
+      replicas: 3
+    ports:
+      - "3306:3306"
+
+  auth_service:
+    image: meghanath23/project:authimage
+    deploy:
+      replicas: 3
+    ports:
+      - "5001:5001"
+
+  book_service:
+    image: meghanath23/project:bookimage
+    deploy:
+      replicas: 3
+    ports:
+      - "5002:5002"
+
+  borrow_service:
+    image: meghanath23/project:borrowimage
+    deploy:
+      replicas: 3
+    ports:
+      - "5003:5003"
+
+  frontend:
+    image: meghanath23/project:frontendimage
+    deploy:
+      replicas: 3
+    ports:
+      - "5000:5000" 
+
+
+   
